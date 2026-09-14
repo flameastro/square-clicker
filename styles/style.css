@@ -3,3 +3,19 @@
     margin: 0;
     padding: 0;
 }
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+}
+
+body {
+    background-color: #e3e3e3;
+}
+
+section {
+    margin: 10px;
+    text-align: center;
+}

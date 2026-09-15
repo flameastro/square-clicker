@@ -8,26 +8,49 @@
     padding: 0;
 }
 
-div {
+body {
+    transition: all 0.25s ease-in-out;
+    font-family: var(--font-space);
+}
+
+div#square {
     width: 100px;
     height: 100px;
     position: relative;
     border-radius: 12px;
 }
 
-body {
-    background-color: #e3e3e3;
-    font-family: var(--font-space);
-}
-
 section {
     display: flex;
-    margin: 10px 20px;
+    position: absolute;
     justify-content: space-between;
-    text-align: center;
+}
+
+.groupDiv {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.theme {
+    background-color: transparent;
+    border: none;
+}
+
+.themeDiv {
+    position: relative;
+    bottom: 75%;
+    left: 48%;
+}
+
+#color {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-radius: 12px;
 }
 
 h1 {
     font-size: 6em;
-    position: absolute;
 }

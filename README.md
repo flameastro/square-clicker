@@ -9,4 +9,4 @@ Each time you click, the browser will create another square, and you need to cli
 <img src="assets/game.gif">
 
 ## How to play
-Go to [square clicker](flameastro.github.io/square-clicker/) and play it!
+Go to [square clicker](flameastro.github.io/square-clicker/) website and play it!

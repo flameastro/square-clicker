@@ -24,13 +24,11 @@ function randomPos(div) {
 }
 
 function createDiv() {
-    // document.body
+    // getting elements
     const body = document.body
-
-    // div
     const div = document.createElement("div")
 
-    // add random positions
+    // add styles
     randomPos(div)
 
     // append on body
@@ -46,6 +44,24 @@ function interact(div) {
     })
 }
 
+function changeColor() {
+    // getting getColor and color
+    const getColor = document.querySelector("#color")
+    const color = getColor.value
+
+    // applying the styles
+    div.style.backgroundColor = color
+    div.style.boxShadow = `0 0 12px ${color}99`
+
+    // repeat the code when getColor changes
+    getColor.addEventListener("change", () => {
+        changeColor()
+    })
+}
+
 
 div = createDiv()
 interact(div)
+changeColor()
+
+

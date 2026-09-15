@@ -1,3 +1,7 @@
+:root {
+    --font-space: "Space Grotesk", sans-serif;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,15 +11,23 @@
 div {
     width: 100px;
     height: 100px;
-    background-color: red;
     position: relative;
+    border-radius: 12px;
 }
 
 body {
     background-color: #e3e3e3;
+    font-family: var(--font-space);
 }
 
 section {
-    margin: 10px;
+    display: flex;
+    margin: 10px 20px;
+    justify-content: space-between;
     text-align: center;
+}
+
+h1 {
+    font-size: 6em;
+    position: absolute;
 }

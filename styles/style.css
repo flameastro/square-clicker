@@ -8,12 +8,20 @@
     padding: 0;
 }
 
+html,
 body {
-    transition: all 0.25s ease-in-out;
-    font-family: var(--font-space);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
+
+body {
+    background-color: #e3e3e3;
+    color: #272727;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    font-family: var(--font-space);
+    overflow: hidden;
+}
+
 
 div#square {
     width: 100px;
@@ -45,7 +53,8 @@ section {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    /* position: relative; */
+    position: relative;
+    z-index: 10;
 }
 
 .dieDiv > span {
@@ -53,8 +62,15 @@ section {
 }
 
 .theme {
-    background-color: transparent;
+    position: relative;
+    z-index: 20;
+    cursor: pointer;
+
+    background: transparent;
     border: none;
+    outline: none;
+    padding: 0;
+    appearance: none;
 }
 
 #color {

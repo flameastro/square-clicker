@@ -39,7 +39,6 @@ function toggleTheme() {
     })
 }
 
-
 function updatePoints() {
     points += 1
     pointsText.innerText = points
@@ -106,7 +105,6 @@ function changeColor() {
     })
 }
 
-
 function explosion(div) {
     // getting square position
     const rect = div.getBoundingClientRect()
@@ -164,9 +162,51 @@ function explosion(div) {
     }, 100)
 }
 
-
-div = createDiv()
-interact(div)
-changeColor()
-
 toggleTheme()
+
+function run(execute) {
+    if (execute) {
+        div = createDiv()
+        interact(div)
+        changeColor()
+    } else {
+        div.remove()
+    }
+}
+
+run(true)
+
+let on = true
+
+function canLose() {
+    const section = document.querySelector("section")
+
+    section.addEventListener("click", (event) => {
+        const elemento = event.target.getAttribute("class")
+
+        if (elemento === "groupDiv" && on) {
+            // Perdeu
+            run(false)
+
+            const lostDiv = document.querySelector(".lostDiv")
+
+            lostDiv.innerHTML = `
+                <h2>Você perdeu</h2>
+                <button>Jogar novamente</button>
+            `
+
+            const lostButton = lostDiv.querySelector("button")
+
+            lostButton.addEventListener("click", () => {
+                window.location.reload()
+            })
+        }
+    })
+}
+
+canLose()
+
+const switchElement = document.querySelector("input[type='checkbox']")
+switchElement.addEventListener("click", () => {
+    on = !on
+})

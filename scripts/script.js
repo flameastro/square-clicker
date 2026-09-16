@@ -76,9 +76,16 @@ function createDiv() {
     return div // returns the div
 }
 
+function audio() {
+    const clickAudio = new Audio("assets/audio/click.mp3")
+    clickAudio.volume = 0.1
+    clickAudio.play()
+}
+
 function interact(div) {
     // Generate new random position
     div.addEventListener("click", () => {
+        audio()
         explosion(div)
         updatePoints()
     })
@@ -100,7 +107,6 @@ function changeColor() {
 }
 
 
-// Efeito de explosão
 function explosion(div) {
     // getting square position
     const rect = div.getBoundingClientRect()
@@ -155,7 +161,7 @@ function explosion(div) {
     setTimeout(() => {
         div.classList.remove("exploding")
         randomPos(div)
-    }, 250)
+    }, 100)
 }
 
 

@@ -207,20 +207,17 @@ function canLose() {
     const section = document.querySelector("section")
 
     section.addEventListener("click", (event) => {
-        const elemento = event.target.getAttribute("class")
+        const element = event.target.getAttribute("class")
 
-        if (elemento === "groupDiv" && on) {
-            // Perdeu
+        if (element === "groupDiv" && on) {
             run(false)
 
-            // reseta Pontos
             localStorage.setItem("points", JSON.stringify(0));
 
             const lostDiv = document.querySelector(".lostDiv")
-
             lostDiv.innerHTML = `
-                <h2>Você perdeu</h2>
-                <button>Jogar novamente</button>
+                <h2>You lost</h2>
+                <button>Play again</button>
             `
 
             const lostButton = lostDiv.querySelector("button")
